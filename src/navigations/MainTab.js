@@ -12,8 +12,8 @@ const TabBarIcon = ({ focused, name }) => {
   return (
     <MaterialIcons
       name={name}
-      size={26}
-      color={focused ? theme.tabActiveColor : theme.tabInactiveColor}
+      size={23}
+      color="black"
     />
   );
 };
@@ -22,11 +22,11 @@ const MainTab = ({ navigation, route }) => {
   const theme = useContext(ThemeContext);
 
   useEffect(() => {
-    const title = getFocusedRouteNameFromRoute(route) ?? 'Channels';
+    const title = getFocusedRouteNameFromRoute(route) ?? '채팅';
     navigation.setOptions({
       headerTitle: title,
       headerRight: () =>
-        title === 'Channels' && (
+        title === '채팅' && (
           <MaterialIcons
             name="add"
             size={26}
@@ -45,18 +45,40 @@ const MainTab = ({ navigation, route }) => {
       }}
     >
       <Tab.Screen
-        name="Channels"
+         name="홈"
+         component={Profile}
+         options={{
+           tabBarIcon: ({ focused }) =>
+               TabBarIcon({
+                   focused,
+                   name: focused ? 'home' : 'HomeOutlined',
+               }),
+         }}
+      />
+      <Tab.Screen
+        name="채팅"
         component={ChannelList}
         options={{
           tabBarIcon: ({ focused }) =>
             TabBarIcon({
               focused,
-              name: focused ? 'chat-bubble' : 'chat-bubble-outline',
+              name: focused ? 'chat-bubble' : 'chat-outline',
             }),
         }}
       />
       <Tab.Screen
-        name="Profile"
+         name="글 작성"
+         component={Profile}
+         options={{
+            tabBarIcon: ({ focused }) =>
+                TabBarIcon({
+                    focused,
+                    name: focused ? 'person' : 'plus-circle',
+                }),
+         }}
+      />
+      <Tab.Screen
+        name="내 소개"
         component={Profile}
         options={{
           tabBarIcon: ({ focused }) =>

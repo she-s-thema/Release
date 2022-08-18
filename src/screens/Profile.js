@@ -56,7 +56,7 @@ const Profile = () => {
       <Input label="Name" value={user.name} disabled />
       <Input label="Email" value={user.email} disabled />
       <Button
-        title="logout"
+        title="로그아웃"
         onPress={_handleLogoutButtonPress}
         containerStyle={{ marginTop: 30, backgroundColor: theme.buttonLogout }}
       />

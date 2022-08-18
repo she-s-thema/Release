@@ -85,7 +85,7 @@ const Channel = ({ navigation, route }) => {
         listViewProps={{
           style: { backgroundColor: theme.background },
         }}
-        placeholder="Enter a message..."
+        placeholder=""
         messages={messages}
         user={{ _id: uid, name, avatar: photoUrl }}
         onSend={_handleMessageSend}

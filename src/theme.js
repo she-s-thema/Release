@@ -27,12 +27,12 @@ export const theme = {
   buttonBackground: colors.blue,
   buttonTitle: colors.white,
   buttonUnfilledTitle: colors.blue,
-  buttonLogout: colors.red,
+  buttonLogout: colors.blue,
 
   // Navigation
   headerTintColor: colors.black,
-  tabActiveColor: colors.blue,
-  tabInactiveColor: colors.grey_1,
+  tabActiveColor: colors.black,
+  tabInactiveColor: colors.black,
 
   // Spinner
   spinnerBackground: colors.black,
