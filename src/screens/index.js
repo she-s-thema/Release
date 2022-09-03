@@ -4,5 +4,8 @@ import Channel from './Channel';
 import ChannelCreation from './ChannelCreation';
 import ChannelList from './ChannelList';
 import Profile from './Profile';
+import Mypage from './Mypage';
+import Home from './Home';
 
-export { Login, Signup, Channel, ChannelCreation, ChannelList, Profile };
+export { Login, Signup, Channel, ChannelCreation, ChannelList, Profile, Mypage, Home };
+

@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
         marginTop : 58,
         marginLeft : 20,
         position : 'relative',
-        alignItem : 'stretch',
     },
 
     nickname : {
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
     },
 
     edit : {
-        Color : "gray",
+        color : "gray",
         fontSize : 10,
         marginLeft : 130,
         marginTop : 125,
@@ -104,9 +103,8 @@ const styles = StyleSheet.create({
 
     hpost : {
         fontSize : 14,
-        marginTop : 26,
+        marginTop : 27,
         marginRight : 250,
-
     },
 
     nexttwo : {
@@ -116,8 +114,11 @@ const styles = StyleSheet.create({
     },
 
     picture : {
+        width : 100,
+        height : 100,
         marginTop : 18,
         marginLeft : 20,
+        borderRadius : 5,
     },
 
     posttitle : {
@@ -132,11 +133,12 @@ const styles = StyleSheet.create({
         marginTop : 2,
         marginLeft : 20,
         marginRight : 62,
+        color : 'grey',
     },
 
     mypost : {
-        width : 15,
-        height : 14,
+        width : 19,
+        height : 19,
         marginLeft : 20,
         marginTop : 28,
     },
@@ -149,13 +151,18 @@ const styles = StyleSheet.create({
 
     pic : {
         alignItems : 'center',
+    },
+
+    background : {
+        backgroundColor : 'white',
+        height : '100%',
     }
 
 });
 
 const Mypage = () => {
     return (
-        <View>
+        <View style = {styles.background}>
             <View>
                 <Image  style = {styles.profile} source = {require('../img/clothes.png')} />
                 <Text style = {styles.nickname}>k99._.e</Text>
@@ -200,7 +207,7 @@ const Mypage = () => {
                 <Text style = {styles.postcost}>10,500원</Text>
             </View>
             <View style = {styles.container}>
-                <Image style = {styles.mypost} source = {require('../img/mypost.png')}/>
+                <Image style = {styles.mypost} source = {require('../img/posttwo.png')}/>
                 <Text style = {styles.hpost}>내 게시물</Text>
                 <Image style = {styles.nexttwo} source = {require('../img/next.png')}/>
             </View>

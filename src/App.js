@@ -40,7 +40,7 @@ const App = () => {
       <UserProvider>
         <ProgressProvider>
           <StatusBar barStyle="dark-content" />
-          <Navigation />
+          <Navigation screenOptions={{ headerShown: false }}/>
         </ProgressProvider>
       </UserProvider>
     </ThemeProvider>

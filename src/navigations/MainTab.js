@@ -12,7 +12,7 @@ const TabBarIcon = ({ focused, name }) => {
   return (
     <MaterialIcons
       name={name}
-      size={23}
+      size={28}
       color="black"
     />
   );
@@ -24,7 +24,6 @@ const MainTab = ({ navigation, route }) => {
   useEffect(() => {
     const title = getFocusedRouteNameFromRoute(route) ?? '채팅';
     navigation.setOptions({
-      headerTitle: title,
       headerRight: () =>
         title === '채팅' && (
           <MaterialIcons

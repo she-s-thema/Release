@@ -28,7 +28,7 @@ const SendButton = props => {
       containerStyle={{
         width: 44,
         height: 44,
-        alignItems: 'center',
+        //alignItems: 'center',
         justifyContent: 'center',
         marginHorizontal: 4,
       }}
