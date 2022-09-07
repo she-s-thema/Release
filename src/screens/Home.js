@@ -37,8 +37,7 @@ const styles = StyleSheet.create({
 
     text : {
         marginTop : 10,
-        fontSize : 25,
-        display : 'inline-block'
+        fontSize : 25
     },
 
     picker : {
@@ -106,11 +105,15 @@ const styles = StyleSheet.create({
         marginLeft : 7,
         fontSize : 12,
     },
+
+    background : {
+        backgroundColor : 'white',
+    }
 });
 
 const Home = () => {
         return (
-            <ScrollView>
+            <ScrollView style = {styles.background}>
                 <View style={styles.container}>
                     <TextInput
                         style={styles.search}

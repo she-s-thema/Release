@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Profile, Mypage, ChannelList } from '../screens';
+import { Profile, Mypage, ChannelList, Home } from '../screens';
 import { MaterialIcons } from '@expo/vector-icons';
 import { ThemeContext } from 'styled-components/native';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
@@ -45,7 +45,7 @@ const MainTab = ({ navigation, route }) => {
     >
       <Tab.Screen
          name="홈"
-         component={Profile}
+         component={Home}
          options={{
            tabBarIcon: ({ focused }) =>
                TabBarIcon({
