@@ -6,6 +6,7 @@ import ChannelList from "./ChannelList";
 import Profile from "./Profile";
 import Mypage from "./Mypage";
 import Home from "./Home";
+import Post from "./Post";
 
 export {
   Login,
@@ -16,4 +17,5 @@ export {
   Profile,
   Mypage,
   Home,
+  Post,
 };

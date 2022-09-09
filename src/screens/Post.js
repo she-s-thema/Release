@@ -2,17 +2,13 @@ import React from 'react';
 import {StyleSheet, ScrollView, View, Text, TextInput, Picker, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-class Post extends React.Component{
-    render(){
+const Post = () => {
         return(
             <ScrollView>
                 <View style = {styles.container}>
                 </View>
             </ScrollView>
-            )
-    }
-
-
+        )
 }
 const styles = StyleSheet.create(
     {
@@ -22,7 +18,7 @@ const styles = StyleSheet.create(
             justifyContent : 'center',
             alignItems : 'center',
         },
-        
+
     }
 )
-export default Post
+export default Post;

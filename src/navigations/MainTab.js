@@ -1,94 +1,45 @@
 import React, { useContext, useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Profile, Mypage, ChannelList, Home } from '../screens';
+import { Mypage, ChannelList, Home, Post } from '../screens';
 import { MaterialIcons } from '@expo/vector-icons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ThemeContext } from 'styled-components/native';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
-const TabBarIcon = ({ focused, name }) => {
-  const theme = useContext(ThemeContext);
+const MainTab = () => {
   return (
-    <MaterialIcons
-      name={name}
-      size={28}
-      color="black"
-    />
-  );
-};
+          <Tab.Navigator
+              screenOptions={({ route }) => ({
+                  tabBarIcon: ({ focused, color, size}) => {
+                      let iconName;
 
-const MainTab = ({ navigation, route }) => {
-  const theme = useContext(ThemeContext);
+                      if (route.name === '홈') {
+                          iconName = focused
+                              ? 'home'
+                              : 'ios-home-outline';
+                      } else if (route.name === '채팅') {
+                          iconName = focused ? 'chatbubble' : 'chatbubble-outline';
+                      } else if (route.name === '글 작성') {
+                          iconName = focused ? 'add-circle' : 'add-circle-outline';
+                      } else if (route.name === '내 소개') {
+                          iconName = focused ? 'person' : 'person-outline';
+                      }
 
-  useEffect(() => {
-    const title = getFocusedRouteNameFromRoute(route) ?? '채팅';
-    navigation.setOptions({
-      headerRight: () =>
-        title === '채팅' && (
-          <MaterialIcons
-            name="add"
-            size={26}
-            style={{ margin: 10 }}
-            onPress={() => navigation.navigate('Channel Creation')}
-          />
-        ),
-    });
-  }, [route]);
-
-  return (
-    <Tab.Navigator
-      tabBarOptions={{
-        activeTintColor: theme.tabActiveColor,
-        inactiveTintColor: theme.tabInactiveColor,
-      }}
-    >
-      <Tab.Screen
-         name="홈"
-         component={Home}
-         options={{
-           tabBarIcon: ({ focused }) =>
-               TabBarIcon({
-                   focused,
-                   name: focused ? 'home' : 'HomeOutlined',
-               }),
-         }}
-      />
-      <Tab.Screen
-        name="채팅"
-        component={ChannelList}
-        options={{
-          tabBarIcon: ({ focused }) =>
-            TabBarIcon({
-              focused,
-              name: focused ? 'chat-bubble' : 'chat-outline',
-            }),
-        }}
-      />
-      <Tab.Screen
-         name="글 작성"
-         component={Profile}
-         options={{
-            tabBarIcon: ({ focused }) =>
-                TabBarIcon({
-                    focused,
-                    name: focused ? 'person' : 'plus-circle',
-                }),
-         }}
-      />
-      <Tab.Screen
-        name="내 소개"
-        component={Mypage}
-        options={{
-          tabBarIcon: ({ focused }) =>
-            TabBarIcon({
-              focused,
-              name: focused ? 'person' : 'person-outline',
-            }),
-        }}
-      />
-    </Tab.Navigator>
+                      return <Ionicons name={iconName} size={size} color='black'/>;
+                  },
+                  tabBarActiveTintColor: 'black',
+                  tabBarInactiveTintColor: 'black',
+              })}
+          >
+              <Tab.Screen name="홈" component={Home}/>
+              <Tab.Screen name="채팅" component={ChannelList} />
+              <Tab.Screen name="글 작성" component={Post} />
+              <Tab.Screen name="내 소개" component={Mypage} />
+          </Tab.Navigator>
   );
 };
 
