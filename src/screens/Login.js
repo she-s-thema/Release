@@ -1,13 +1,13 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
-import { ProgressContext, UserContext } from '../contexts';
-import styled from 'styled-components/native';
-import { Image, Input, Button } from '../components';
-import { images } from '../utils/images';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { validateEmail, removeWhitespace } from '../utils/common';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Alert } from 'react-native';
-import { signin } from '../utils/firebase';
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { ProgressContext, UserContext } from "../contexts";
+import styled from "styled-components/native";
+import { Image, Input, Button } from "../components";
+import { images } from "../utils/images";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { validateEmail, removeWhitespace } from "../utils/common";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Alert } from "react-native";
+import { signin } from "../utils/firebase";
 
 const Container = styled.View`
   flex: 1;
@@ -32,24 +32,24 @@ const Login = ({ navigation }) => {
   const { spinner } = useContext(ProgressContext);
   const insets = useSafeAreaInsets();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const passwordRef = useRef();
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
     setDisabled(!(email && password && !errorMessage));
   }, [email, password, errorMessage]);
 
-  const _handleEmailChange = email => {
+  const _handleEmailChange = (email) => {
     const changedEmail = removeWhitespace(email);
     setEmail(changedEmail);
     setErrorMessage(
-      validateEmail(changedEmail) ? '' : 'Please verify your email.'
+      validateEmail(changedEmail) ? "" : "Please verify your email."
     );
   };
-  const _handlePasswordChange = password => {
+  const _handlePasswordChange = (password) => {
     setPassword(removeWhitespace(password));
   };
   const _handleLoginButtonPress = async () => {
@@ -58,7 +58,7 @@ const Login = ({ navigation }) => {
       const user = await signin({ email, password });
       dispatch(user);
     } catch (e) {
-      Alert.alert('Login Error', e.message);
+      Alert.alert("Login Error", e.message);
     } finally {
       spinner.stop();
     }
@@ -97,7 +97,7 @@ const Login = ({ navigation }) => {
         />
         <Button
           title="Sign up with email"
-          onPress={() => navigation.navigate('Signup')}
+          onPress={() => navigation.navigate("Signup")}
           isFilled={false}
         />
       </Container>

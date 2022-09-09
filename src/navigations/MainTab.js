@@ -4,6 +4,7 @@ import { Profile, Mypage, ChannelList, Home } from '../screens';
 import { MaterialIcons } from '@expo/vector-icons';
 import { ThemeContext } from 'styled-components/native';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
+import { FontAwesome } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
