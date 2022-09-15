@@ -1,24 +1,10 @@
 import React from 'react';
-import {StyleSheet, ScrollView, View, Text, TextInput, Picker, Image} from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {Text} from 'react-native';
 
 const Post = () => {
-        return(
-            <ScrollView>
-                <View style = {styles.container}>
-                </View>
-            </ScrollView>
-        )
+    return (
+        <Text>No</Text>
+    );
 }
-const styles = StyleSheet.create(
-    {
-        container : {
-            flex : 1,
-            marginTop : 50,
-            justifyContent : 'center',
-            alignItems : 'center',
-        },
 
-    }
-)
 export default Post;

@@ -11,36 +11,36 @@ import { NavigationContainer } from '@react-navigation/native';
 const Tab = createBottomTabNavigator();
 
 const MainTab = () => {
-  return (
-          <Tab.Navigator
-              screenOptions={({ route }) => ({
-                  tabBarIcon: ({ focused, color, size}) => {
-                      let iconName;
+    return (
+        <Tab.Navigator
+            screenOptions={({ route }) => ({
+                tabBarIcon: ({ focused, color, size}) => {
+                    let iconName;
 
-                      if (route.name === '홈') {
-                          iconName = focused
-                              ? 'home'
-                              : 'ios-home-outline';
-                      } else if (route.name === '채팅') {
-                          iconName = focused ? 'chatbubble' : 'chatbubble-outline';
-                      } else if (route.name === '글 작성') {
-                          iconName = focused ? 'add-circle' : 'add-circle-outline';
-                      } else if (route.name === '내 소개') {
-                          iconName = focused ? 'person' : 'person-outline';
-                      }
+                    if (route.name === '홈') {
+                        iconName = focused
+                            ? 'home'
+                            : 'ios-home-outline';
+                    } else if (route.name === '채팅') {
+                        iconName = focused ? 'chatbubble' : 'chatbubble-outline';
+                    } else if (route.name === '글 작성') {
+                        iconName = focused ? 'add-circle' : 'add-circle-outline';
+                    } else if (route.name === '내 소개') {
+                        iconName = focused ? 'person' : 'person-outline';
+                    }
 
-                      return <Ionicons name={iconName} size={size} color='black'/>;
-                  },
-                  tabBarActiveTintColor: 'black',
-                  tabBarInactiveTintColor: 'black',
-              })}
-          >
-              <Tab.Screen name="홈" component={Home}/>
-              <Tab.Screen name="채팅" component={ChannelList} />
-              <Tab.Screen name="글 작성" component={Post} />
-              <Tab.Screen name="내 소개" component={Mypage} />
-          </Tab.Navigator>
-  );
+                    return <Ionicons name={iconName} size={size} color='black'/>;
+                },
+                tabBarActiveTintColor: 'black',
+                tabBarInactiveTintColor: 'black',
+            })}
+        >
+            <Tab.Screen name="홈" component={Home}/>
+            <Tab.Screen name="채팅" component={ChannelList} />
+            <Tab.Screen name="글 작성" component={Post} />
+            <Tab.Screen name="내 소개" component={Mypage} />
+        </Tab.Navigator>
+    );
 };
 
 export default MainTab;
