@@ -8,7 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "targetSdkVersion": 31,
+    "targetSdkVersion": "31",
     "buildToolsVersion": "31.0.0",
     "@expo/vector-icons": "^13.0.0",
     "@react-native-community/masked-view": "0.1.10",
