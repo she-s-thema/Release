@@ -164,7 +164,7 @@ const Mypage = () => {
     return (
         <View style = {styles.background}>
             <View>
-                <Image  style = {styles.profile} source = {require('../img/clothes.png')} />
+                <Image  style = {styles.profile} source = {require('../img/p.png')} />
                 <Text style = {styles.nickname}>k99._.e</Text>
                 <Text style = {styles.location}>부산광역시 강서구 가락동</Text>
                 <Text style = {styles.edit}>정보 수정</Text>
@@ -192,9 +192,9 @@ const Mypage = () => {
                 <Image style = {styles.nexttwo} source = {require('../img/next.png')}/>
             </View>
             <View style = {styles.container}>
-                <Image style = {styles.picture} source = {require('../img/clothes.png')}/>
-                <Image style = {styles.picture} source = {require('../img/clothes.png')}/>
-                <Image style = {styles.picture} source = {require('../img/clothes.png')}/>
+                <Image style = {styles.picture} source = {require('../img/one.png')}/>
+                <Image style = {styles.picture} source = {require('../img/two.png')}/>
+                <Image style = {styles.picture} source = {require('../img/three.png')}/>
             </View>
             <View style = {styles.container}>
                 <Text style = {styles.posttitle}>검정 싱글 크롭 자켓</Text>
@@ -213,8 +213,8 @@ const Mypage = () => {
             </View>
             <View style = {styles.container}>
                 <Image style = {styles.picture} source = {require('../img/clothes.png')}/>
-                <Image style = {styles.picture} source = {require('../img/clothes.png')}/>
-                <Image style = {styles.picture} source = {require('../img/clothes.png')}/>
+                <Image style = {styles.picture} source = {require('../img/one.png')}/>
+                <Image style = {styles.picture} source = {require('../img/three.png')}/>
             </View>
             <View style = {styles.container}>
                 <Text style = {styles.posttitle}>검정 싱글 크롭 자켓</Text>
