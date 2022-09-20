@@ -10,7 +10,24 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
-const MainTab = () => {
+const MainTab = ({ navigation, route }) => {
+
+    useEffect(() => {
+        const title = getFocusedRouteNameFromRoute(route) ?? 'Channels';
+        navigation.setOptions({
+            headerTitle: title,
+            headerRight: () =>
+                title === 'Channels' && (
+                    <MaterialIcons
+                        name="add"
+                        size={26}
+                        style={{ margin: 10 }}
+                        onPress={() => navigation.navigate('Channel Creation')}
+                    />
+                ),
+        });
+    }, [route]);
+
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {Channel, ChannelCreation, Mypage} from '../screens';
+import {Channel, ChannelCreation, Mypage, ChannelList} from '../screens';
 import MainTab from './MainTab';
 
 const Stack = createStackNavigator();
@@ -11,7 +11,7 @@ const MainStack = () => {
 
   return (
     <Stack.Navigator
-        screenOptions={{ headerShown: false }}>
+        screenOptions={{ headerShown: true}}>
       <Stack.Screen
           name="Main"
           component={MainTab}
@@ -19,11 +19,11 @@ const MainStack = () => {
       <Stack.Screen
           name="Channel Creation"
           component={ChannelCreation}
-          options={{ headerShown: false }}/>
+          options={{ headerShown: true }}/>
       <Stack.Screen
           name="Channel"
           component={Channel}
-          options={{ headerShown: false }}/>
+          options={{ headerShown: true }}/>
         <Stack.Screen
             name="Mypage"
             component={Mypage}

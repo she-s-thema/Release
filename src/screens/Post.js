@@ -1,9 +1,16 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Image, StyleSheet, Text} from 'react-native';
+
+const styles = StyleSheet.create({
+    check : {
+        width : 380,
+        height : 820,
+    }
+});
 
 const Post = () => {
     return (
-        <Text>No</Text>
+        <Image style = {styles.check} source = {require('../img/title.png')}></Image>
     );
 }
 

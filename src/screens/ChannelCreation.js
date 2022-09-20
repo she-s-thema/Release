@@ -53,46 +53,46 @@ const ChannelCreation = ({ navigation }) => {
   };
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={{ flex: 1 }}
-      extraScrollHeight={20}
-    >
-      <Container>
-        <Input
-          label="Title"
-          value={title}
-          onChangeText={_handleTitleChange}
-          onSubmitEditing={() => {
-            setTitle(title.trim());
-            descriptionRef.current.focus();
-          }}
-          onBlur={() => setTitle(title.trim())}
-          placeholder="Title"
-          returnKeyType="next"
-          maxLength={20}
-        />
-        <Input
-          ref={descriptionRef}
-          label="Description"
-          value={description}
-          onChangeText={text => setDescription(text)}
-          onSubmitEditing={() => {
-            setDescription(description.trim());
-            _handleCreateButtonPress();
-          }}
-          onBlur={() => setDescription(description.trim())}
-          placeholder="Description"
-          returnKeyType="done"
-          maxLength={40}
-        />
-        <ErrorText>{errorMessage}</ErrorText>
-        <Button
-          title="Create"
-          onPress={_handleCreateButtonPress}
-          disabled={disabled}
-        />
-      </Container>
-    </KeyboardAwareScrollView>
+      <KeyboardAwareScrollView
+          contentContainerStyle={{ flex: 1 }}
+          extraScrollHeight={20}
+      >
+        <Container>
+          <Input
+              label="Title"
+              value={title}
+              onChangeText={_handleTitleChange}
+              onSubmitEditing={() => {
+                setTitle(title.trim());
+                descriptionRef.current.focus();
+              }}
+              onBlur={() => setTitle(title.trim())}
+              placeholder="Title"
+              returnKeyType="next"
+              maxLength={20}
+          />
+          <Input
+              ref={descriptionRef}
+              label="Description"
+              value={description}
+              onChangeText={text => setDescription(text)}
+              onSubmitEditing={() => {
+                setDescription(description.trim());
+                _handleCreateButtonPress();
+              }}
+              onBlur={() => setDescription(description.trim())}
+              placeholder="Description"
+              returnKeyType="done"
+              maxLength={40}
+          />
+          <ErrorText>{errorMessage}</ErrorText>
+          <Button
+              title="Create"
+              onPress={_handleCreateButtonPress}
+              disabled={disabled}
+          />
+        </Container>
+      </KeyboardAwareScrollView>
   );
 };
 
